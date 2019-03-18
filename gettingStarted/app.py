@@ -12,10 +12,10 @@ app = Flask(__name__)
     Fetch the data from the MongoDB database through the
     .find() method from the MongoDB collection'''
 
-@app.route("/get_all_contact", methods = ['GET'])
-def get_all_contact():
+@app.route("/get_all_users", methods = ['GET'])
+def get_all_users():
     try:
-        contacts = db.Contacts.find()
-        return dumps(contacts)
+        users = db.Users.find()
+        return dumps(users)
     except getopt.GetoptError as e:
         return dumps({'error' : str(e)})
